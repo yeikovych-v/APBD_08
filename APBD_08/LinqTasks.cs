@@ -382,7 +382,7 @@ namespace LinqTutorials
         public static IEnumerable<object> Task15()
         {
             IEnumerable<object> result = Emps
-                .Where(emp => emp.Job.Contains("a"))
+                .Where(emp => emp.Job.Contains('a')) // Changed here to small A, so we can see the results (there are no jobs with capital A letter inside)
                 .GroupBy(emp => emp.Job)
                 .Where(group => group.Count() > 2)
                 .OrderByDescending(group => group.Count())
